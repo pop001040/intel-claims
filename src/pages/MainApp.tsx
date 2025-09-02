@@ -4,6 +4,11 @@ import Sidebar from "@/components/layout/Sidebar";
 import Dashboard from "@/components/dashboard/Dashboard";
 import ClaimsManagement from "@/components/claims/ClaimsManagement";
 import FraudDetection from "@/components/fraud/FraudDetection";
+import DocumentReview from "@/components/documents/DocumentReview";
+import ProvidersManagement from "@/components/providers/ProvidersManagement";
+import Reports from "@/components/reports/Reports";
+import AuditLogs from "@/components/audit/AuditLogs";
+import AlertsCenter from "@/components/alerts/AlertsCenter";
 
 const MainApp = () => {
   const [activeTab, setActiveTab] = useState("dashboard");
@@ -17,50 +22,15 @@ const MainApp = () => {
       case "fraud":
         return <FraudDetection />;
       case "documents":
-        return (
-          <div className="flex items-center justify-center h-96 text-muted-foreground">
-            <div className="text-center">
-              <h2 className="text-xl font-medium mb-2">مراجعة المستندات</h2>
-              <p>سيتم تطوير هذا القسم لمراجعة المستندات بتقنية OCR</p>
-            </div>
-          </div>
-        );
+        return <DocumentReview />;
       case "providers":
-        return (
-          <div className="flex items-center justify-center h-96 text-muted-foreground">
-            <div className="text-center">
-              <h2 className="text-xl font-medium mb-2">إدارة مقدمي الخدمة</h2>
-              <p>دليل شامل لمقدمي الخدمات الطبية المعتمدين</p>
-            </div>
-          </div>
-        );
+        return <ProvidersManagement />;
       case "reports":
-        return (
-          <div className="flex items-center justify-center h-96 text-muted-foreground">
-            <div className="text-center">
-              <h2 className="text-xl font-medium mb-2">التقارير والإحصائيات</h2>
-              <p>تقارير شاملة عن أداء المنظومة والاتجاهات</p>
-            </div>
-          </div>
-        );
+        return <Reports />;
       case "audit":
-        return (
-          <div className="flex items-center justify-center h-96 text-muted-foreground">
-            <div className="text-center">
-              <h2 className="text-xl font-medium mb-2">سجل التدقيق</h2>
-              <p>سجل شامل لجميع العمليات والتغييرات في النظام</p>
-            </div>
-          </div>
-        );
+        return <AuditLogs />;
       case "alerts":
-        return (
-          <div className="flex items-center justify-center h-96 text-muted-foreground">
-            <div className="text-center">
-              <h2 className="text-xl font-medium mb-2">التنبيهات والإشعارات</h2>
-              <p>مركز إدارة التنبيهات والإشعارات الفورية</p>
-            </div>
-          </div>
-        );
+        return <AlertsCenter />;
       case "users":
         return (
           <div className="flex items-center justify-center h-96 text-muted-foreground">
